@@ -1,0 +1,149 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: radial-gradient(circle, #0f172a, #020617);
+  color: #f1f5f9;
+  overflow-x: hidden;
+  perspective: 1000px; /* برای 3D */
+}
+
+#app {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  display: flex;
+  gap: 30px;
+  background: #1e293b;
+  border-radius: 16px;
+  box-shadow: 0 0 30px #00f2fe;
+  transform-style: preserve-3d;
+}
+
+.sidebar, .main-content {
+  background: #0f172a;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 20px #0ff;
+  flex: 1;
+  color: #7dd3fc;
+  transform-style: preserve-3d;
+  opacity: 0;
+  transform: translateZ(-200px) rotateY(30deg);
+  animation-fill-mode: forwards;
+}
+
+.sidebar {
+  max-width: 280px;
+  text-align: center;
+  animation: slideInSide 1.2s ease forwards;
+}
+
+.main-content {
+  animation: slideInMain 1.4s ease forwards;
+}
+
+.avatar {
+  width: 150px;
+  border-radius: 50%;
+  border: 4px solid #38bdf8;
+  box-shadow: 0 0 25px #3b82f6;
+  margin-bottom: 15px;
+  transform-style: preserve-3d;
+  opacity: 0;
+  animation: avatarIn 1.6s ease forwards 1.2s;
+}
+
+h1, h2, h3, p, a {
+  margin: 10px 0;
+  transform-style: preserve-3d;
+  opacity: 0;
+}
+
+h1 {
+  font-size: 1.8rem;
+  animation: fadeInText 0.8s ease forwards 1.4s;
+}
+
+h2 {
+  font-size: 1.5rem;
+  animation: fadeInText 0.8s ease forwards 1.6s;
+}
+
+h3 {
+  font-size: 1.3rem;
+  animation: fadeInText 0.8s ease forwards 1.8s;
+}
+
+p, a {
+  font-size: 1rem;
+  animation: fadeInText 0.8s ease forwards 2s;
+}
+
+a.btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #3b82f6;
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  box-shadow: 0 0 15px #3b82f6;
+  transition: 0.3s ease;
+  animation: fadeInText 0.8s ease forwards 2.2s;
+}
+
+a.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #60a5fa;
+}
+
+/* Animations */
+@keyframes slideInSide {
+  to {
+    opacity: 1;
+    transform: translateZ(0) rotateY(0);
+  }
+}
+
+@keyframes slideInMain {
+  to {
+    opacity: 1;
+    transform: translateZ(0) rotateY(0);
+  }
+}
+
+@keyframes avatarIn {
+  to {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+}
+
+@keyframes fadeInText {
+  to {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+}
+
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 15px;
+  margin-top: 10px;
+  animation: fadeInText 0.8s ease forwards 2.4s;
+}
+
+.readme {
+  margin-top: 30px;
+  background: #020617;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 25px #0ff;
+  font-family: monospace;
+  white-space: pre-wrap;
+  font-size: 1rem;
+  color: #7dd3fc;
+  line-height: 1.6;
+  animation: fadeInText 0.8s ease forwards 2.6s;
+}
